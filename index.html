@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="2027/1/14–1/18 東莞 AI 影片交流團五天四夜行程規劃（未拍板）">
+<title>東莞 AI 影片交流團</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: 一份領隊用的行程書 — 窄欄閱讀，時刻表與票價用等寬數字，路線用「港口航線」式的節點圖 */
+:root{
+  --bg:#F5F7F6; --surface:#FFFFFF; --ink:#13292C; --muted:#56696B; --line:#D5DEDC;
+  --river:#0F5C63; --river-soft:#E1EEEC; --amber:#9A5B0B; --amber-soft:#FBF0DC;
+  --ok:#21734B; --ok-soft:#E3F2E9; --risk:#A3362B; --risk-soft:#F8E6E3;
+  --f-display:"Noto Serif TC","Songti TC",serif;
+  --f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1A1C; --surface:#152427; --ink:#E4EEEC; --muted:#9DB0AE; --line:#2A3D40;
+  --river:#5FC1C4; --river-soft:#17383B; --amber:#E8B465; --amber-soft:#3A2C14;
+  --ok:#78CFA0; --ok-soft:#173326; --risk:#F09A8E; --risk-soft:#3D1F1B; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1A1C; --surface:#152427; --ink:#E4EEEC; --muted:#9DB0AE; --line:#2A3D40;
+  --river:#5FC1C4; --river-soft:#17383B; --amber:#E8B465; --amber-soft:#3A2C14;
+  --ok:#78CFA0; --ok-soft:#173326; --risk:#F09A8E; --risk-soft:#3D1F1B; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15.5px;line-height:1.7;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+.wrap{max-width:980px;margin:0 auto}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.3;margin:0}
+h1{font-size:clamp(28px,5vw,40px);font-weight:800}
+h2{font-size:24px;font-weight:800;padding-top:8px}
+h3{font-size:18px;font-weight:600}
+p{margin:0}
+.mono,.t{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+a{color:var(--river)}
+a:focus-visible{outline:2px solid var(--river);outline-offset:2px}
+small,.muted{color:var(--muted)}
+section{display:grid;gap:16px;padding-top:44px}
+.sec-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:8px}
+.sec-head .k{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;color:var(--river);text-transform:uppercase}
+
+/* header */
+header{padding-block:40px 8px;display:grid;gap:14px}
+.eyebrow{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.14em;color:var(--river);text-transform:uppercase}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:13px;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--surface)}
+.tag.candidate{border-color:var(--amber);color:var(--amber);background:var(--amber-soft);font-weight:700}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:8px}
+.fact{background:var(--surface);padding:14px 16px;display:grid;gap:2px}
+.fact b{font-family:var(--f-mono);font-size:22px;font-weight:600;font-variant-numeric:tabular-nums}
+.fact span{font-size:13px;color:var(--muted)}
+
+/* legend */
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--muted)}
+.mk{display:inline-block;font-size:12px;font-weight:700;padding:0 7px;border-radius:4px;line-height:1.7}
+.mk.v{background:var(--ok-soft);color:var(--ok)}
+.mk.e{background:var(--amber-soft);color:var(--amber)}
+.mk.q{background:var(--risk-soft);color:var(--risk)}
+
+/* route */
+.route{background:var(--surface);border:1px solid var(--line);padding:22px 18px;overflow-x:auto}
+.route ol{list-style:none;margin:0;padding:0;display:flex;min-width:760px}
+.route li{flex:1;position:relative;padding-top:30px;display:grid;gap:2px;font-size:13.5px}
+.route li::before{content:"";position:absolute;top:9px;left:0;right:0;height:3px;background:var(--river)}
+.route li.sea::before{background:repeating-linear-gradient(90deg,var(--river) 0 10px,transparent 10px 16px)}
+.route li:last-child::before{right:auto;width:12px}
+.route li::after{content:"";position:absolute;top:3px;left:0;width:15px;height:15px;border-radius:50%;background:var(--surface);border:3px solid var(--river)}
+.route .t{font-size:15px;font-weight:600}
+.route .n{font-weight:700}
+.route .d{color:var(--muted);font-size:12.5px;padding-right:10px}
+
+/* tables */
+.tbl{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12.5px;letter-spacing:.06em;color:var(--muted);font-weight:700;background:var(--bg)}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+td.t{white-space:nowrap}
+tr.pick td{background:var(--river-soft)}
+tr.total td{font-weight:700;border-top:2px solid var(--ink)}
+.pill{display:inline-block;font-size:12px;font-weight:700;padding:1px 8px;border-radius:999px;background:var(--river);color:var(--surface);white-space:nowrap}
+
+/* overview grid */
+.days{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.day{background:var(--surface);padding:14px;display:grid;gap:8px;align-content:start;min-width:0}
+.day .dt{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+.day .ttl{font-family:var(--f-display);font-weight:800;font-size:17px;line-height:1.35}
+.day.core{background:var(--river-soft)}
+.day ul{margin:0;padding-left:18px;font-size:13.5px;display:grid;gap:3px}
+.day .stay{font-size:12.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:6px}
+@media (max-width:820px){.days{grid-template-columns:1fr}}
+
+/* day detail */
+.dd{background:var(--surface);border:1px solid var(--line);display:grid}
+.dd-head{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;padding:16px 18px;border-bottom:1px solid var(--line)}
+.dd-head .dt{font-family:var(--f-mono);font-weight:600;color:var(--river)}
+.dd-body{padding:6px 18px 16px;display:grid;gap:12px}
+.tl{display:grid;grid-template-columns:118px 1fr;column-gap:14px}
+.tl > div{padding:9px 0;border-bottom:1px dashed var(--line)}
+.tl > div:nth-last-child(-n+2){border-bottom:0}
+.tl .t{font-size:13.5px;font-weight:600;color:var(--river);padding-top:11px}
+.tl .what b{font-weight:700}
+.chip{display:inline-block;font-family:var(--f-mono);font-size:12px;padding:0 7px;border-radius:4px;border:1px solid var(--line);color:var(--muted);margin-left:4px;white-space:nowrap}
+.note{font-size:13.5px;padding:10px 14px;border-left:3px solid var(--amber);background:var(--amber-soft)}
+.note.risk{border-color:var(--risk);background:var(--risk-soft)}
+.note.ok{border-color:var(--ok);background:var(--ok-soft)}
+@media (max-width:560px){.tl{grid-template-columns:1fr}.tl .t{padding-top:10px;border-bottom:0!important;padding-bottom:0}}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.step{background:var(--surface);border:1px solid var(--line);padding:14px;display:grid;gap:6px;align-content:start}
+.step .s{font-family:var(--f-mono);font-size:12px;color:var(--river);letter-spacing:.08em}
+.step p{font-size:14px}
+
+/* screenshots */
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+figure{margin:0;background:var(--surface);border:1px solid var(--line);display:grid}
+figure a{display:block;background:#fff;border-bottom:1px solid var(--line)}
+figure img{display:block;width:100%;height:auto}
+figcaption{padding:10px 12px;font-size:13px;display:grid;gap:2px}
+figcaption b{font-size:14px}
+
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);padding:16px;display:grid;gap:8px;align-content:start}
+.card ul,.card ol{margin:0;padding-left:20px;display:grid;gap:4px;font-size:14.5px}
+.checks{list-style:none;padding:0!important}
+.checks li::before{content:"☐ ";color:var(--muted)}
+footer{padding-top:44px;font-size:13px;color:var(--muted);display:grid;gap:6px}
+footer ol{margin:0;padding-left:20px;display:grid;gap:2px;word-break:break-all}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+<style>
+html{color-scheme:light}
+img{max-width:100%}
+.pdf-only{display:none}
+@page{size:A4;margin:12mm 11mm 14mm}
+@media print{
+  :root{--bg:#FFFFFF}
+  body{font-size:10.5pt;line-height:1.6;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .wrap{max-width:none}
+  header{padding-top:0}
+  h1{font-size:24pt}
+  h2{font-size:16pt}
+  section{padding-top:16px;gap:10px}
+  .sec-head,h3{break-after:avoid}
+  .route{padding:14px 10px;overflow:visible}
+  .route ol{min-width:0}
+  .route li{font-size:8.5pt}
+  .route .t{font-size:9.5pt}
+  .days{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .day{padding:8px}
+  .day .ttl{font-size:11pt}
+  .day ul{font-size:8.5pt;padding-left:14px}
+  .tl > div,figure,.step,.card,.fact,tr,.note,.dd-head{break-inside:avoid}
+  .shots{grid-template-columns:1fr 1fr}
+  figure a{border-bottom:1px solid var(--line)}
+  .tbl{overflow:visible}
+  table{font-size:9.5pt}
+  th,td{padding:6px 8px}
+  #shots-print{break-before:page}
+  .shots{display:block;font-size:0}
+  .shots figure{display:inline-block;width:49%;vertical-align:top;margin:0 0 3mm;font-size:10.5pt;break-inside:avoid}
+  .shots figure:nth-child(odd){margin-right:2%}
+  figure img{max-height:105mm;width:100%;object-fit:contain;object-position:top center;background:#fff}
+  .pdf-only{display:block}
+  .screen-only{display:none}
+  footer ol{font-size:8.5pt}
+}
+</style>
+
+
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Dongguan Delegation · 2027.01.14 — 01.18</div>
+  <h1>東莞 AI 影片交流團｜五天四夜行程規劃</h1>
+  <p class="muted">20–30 人（18–45 歲）· 桃園 → 香港機場不入境轉船 → 虎門 · 主軸：AIGC 品牌行銷影片實戰營、華為與 OPPO 參訪、深度座談、東莞人文景點</p>
+  <div class="tags">
+    <span class="tag candidate">未拍板（candidate）</span>
+    <span class="tag">版本 v0.3 · 2026-11-09 調研</span>
+    <span class="tag">陸方落地招待</span>
+  </div>
+  <div class="facts">
+    <div class="fact"><b>5 天 4 夜</b><span>1/14（四）→ 1/18（一）</span></div>
+    <div class="fact"><b>2 班</b><span>虎門⇄香港機場船班，每天每個方向</span></div>
+    <div class="fact"><b>NT$13,800–15,900</b><span>每人基本費用試算（不含零用）</span></div>
+    <div class="fact"><b>32 km · 40 分</b><span>虎門碼頭 → 松山湖車程</span></div>
+  </div>
+  <div class="legend" aria-label="標記說明">
+    <span><span class="mk v">已查證</span> 官方或營運商頁面</span>
+    <span><span class="mk e">推估</span> 非官方或計算值</span>
+    <span><span class="mk q">待確認</span> 查不到，要問陸方或業者</span>
+  </div>
+  <p class="screen-only"><a href="dongguan-ai-tour-2027.pdf">下載 PDF 版（A4，10 頁）</a></p>
+  <p class="pdf-only muted">線上版：https://imnivek.github.io/dongguan-ai-tour-2027/</p>
+</header>
+
+<!-- 1 交通 -->
+<section id="transport">
+  <div class="sec-head"><span class="k">Route</span><h2>交通：飛香港、不入境、搭船直達虎門</h2></div>
+  <p>理事長的印象是對的。這條路線全程不入境香港、不提行李，行李從桃園直掛，到虎門才入境大陸。唯一要小心的是<b>船班每天每個方向只有 2 班</b>，所以機票時間要倒推船班來訂。</p>
+
+  <div class="route" aria-label="去程路線圖">
+    <ol>
+      <li><span class="t">08:00</span><span class="n">桃園 TPE</span><span class="d">中華航空 CI903 起飛</span></li>
+      <li><span class="t">10:10</span><span class="n">香港機場 HKG</span><span class="d">不走入境，前往 E2 轉機處快船櫃檯</span></li>
+      <li class="sea"><span class="t">13:45 前</span><span class="n">E2 快船櫃檯</span><span class="d">買船票、出示行李收據、辦轉運</span></li>
+      <li class="sea"><span class="t">14:45</span><span class="n">海天中轉大樓</span><span class="d">獅子洋飛航快船開船，約 90 分鐘</span></li>
+      <li><span class="t">約 16:15</span><span class="n">虎門港澳客運碼頭</span><span class="d">入境大陸，陸方接</span></li>
+      <li><span class="t">約 17:30</span><span class="n">松山湖飯店</span><span class="d">遊覽車 32 km · 約 40 分</span></li>
+    </ol>
+  </div>
+
+  <h3>建議航班（Google 航班 2026-11-09 查詢，單人單程經濟艙含稅）</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>方案</th><th>去程 1/14（四）桃園→香港</th><th>回程 1/18（一）香港→桃園</th><th>與船班的緩衝</th><th class="num">來回票價</th></tr></thead>
+    <tbody>
+      <tr class="pick"><td><span class="pill">主推 A</span><br>中華航空</td><td class="t">CI903 08:00 → 10:10</td><td class="t">17:35 → 19:20</td><td>去程到櫃檯截止前 3 小時 35 分<br>回程船到後 4 小時</td><td class="num">≈ 9,930</td></tr>
+      <tr><td>B<br>長榮航空</td><td class="t">BR867 09:50 → 11:50</td><td class="t">15:30 → 17:10</td><td>去程 1 小時 55 分<br>回程約 2 小時</td><td class="num">≈ 10,169</td></tr>
+      <tr><td>C<br>國泰航空</td><td class="t">CX407 08:00 → 10:10</td><td class="t">15:45 → 17:35</td><td>去程 3 小時 35 分<br>回程約 2 小時 15 分</td><td class="num">≈ 12,661</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><b>為什麼主推 A：</b>14:45 是當天最後一班船，錯過就只能入境香港改走陸路。20–30 人的團體，寧可在機場多等，也要把延誤風險壓到最低。代價是 05:30 要在桃園集合；若團員難以配合，改用 B，但要接受去程只有約 2 小時緩衝。回程航班編號與團體票價以旅行社訂位為準。<span class="mk e">推估</span> 票價為個人票、兩段單程相加，團體票另議。</div>
+
+  <h3>船班與票價 <span class="mk v">已查證</span></h3>
+  <div class="tbl"><table>
+    <thead><tr><th>方向</th><th>班次</th><th class="num">經濟艙</th><th class="num">豪華艙</th><th class="num">尊豪艙</th><th>本團搭乘</th></tr></thead>
+    <tbody>
+      <tr><td>香港機場 → 虎門</td><td class="t">10:00 · 14:45</td><td class="num">HK$370</td><td class="num">HK$490</td><td class="num">HK$610</td><td>1/14 14:45</td></tr>
+      <tr><td>虎門 → 香港機場</td><td class="t">07:50 · 12:00</td><td class="num">RMB 370</td><td class="num">RMB 470</td><td class="num">RMB 570</td><td>1/18 12:00</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">營運商：獅子洋飛航（東莞虎門龍威客運）。網上購票 booking.seasyoung.com；香港機場 E2 櫃檯也可現場購買。20–30 人建議提早聯絡營運商預留座位，每班座位數 <span class="mk q">待確認</span>。</p>
+
+  <h3>行李直掛怎麼走</h3>
+  <div class="steps">
+    <div class="step"><span class="s">桃園報到</span><p>跟櫃檯說「到香港轉海天快船往虎門」。<b>每人保管好行李託運收據。</b></p></div>
+    <div class="step"><span class="s">香港落地</span><p><b>不走入境、不去行李轉盤</b>，跟著指標到 E2 轉機處快船票務櫃檯。已入境的人不能再回來搭船。</p></div>
+    <div class="step"><span class="s">E2 櫃檯</span><p>出示當天機票或登機證存根、船票、護照與台胞證、行李收據。有託運行李的人要在開船前 60 分鐘到。</p></div>
+    <div class="step"><span class="s">回程</span><p>在虎門碼頭直接託運行李回台灣、拿登機證，開船前 60 分鐘到櫃檯。到香港機場後，在 28 天內上網申請退回離境稅 HK$200。</p></div>
+  </div>
+  <div class="note ok">香港機場官網的「行李直掛」名單中，<b>中華航空、長榮、國泰、華信、星宇、香港航空、香港快運、大灣區航空</b>都支援東莞虎門。<span class="mk v">已查證</span></div>
+
+  <h3 id="shots-print">官方資料截圖（2026-11-09 擷取，點圖看大圖）</h3>
+  <div class="shots">
+    <figure><a href="img/01-flight-out.jpg" target="_blank" rel="noopener"><img src="img/01-flight-out.jpg" alt="Google 航班：1/14 桃園飛香港，依出發時間排序的直飛航班清單"></a>
+      <figcaption><b>去程 1/14 桃園 → 香港</b><span class="muted">Google 航班，依出發時間排序。早上 7–10 點長榮、華航、國泰都有直飛。</span></figcaption></figure>
+    <figure><a href="img/02-flight-back.jpg" target="_blank" rel="noopener"><img src="img/02-flight-back.jpg" alt="Google 航班：1/18 香港飛桃園，下午至晚上的直飛航班清單"></a>
+      <figcaption><b>回程 1/18 香港 → 桃園</b><span class="muted">Google 航班。船約 13:30 抵港，可接 15:30 之後的航班。</span></figcaption></figure>
+    <figure><a href="img/03-ferry.jpg" target="_blank" rel="noopener"><img src="img/03-ferry.jpg" alt="獅子洋飛航官網：機場航線船期價目表"></a>
+      <figcaption><b>虎門 ⇄ 香港機場 船期價目表</b><span class="muted">獅子洋飛航官網。每天各 2 班；從虎門往機場可退離境稅 HK$200。</span></figcaption></figure>
+    <figure><a href="img/04-hkia-transfer.jpg" target="_blank" rel="noopener"><img src="img/04-hkia-transfer.jpg" alt="香港機場官網：前往中國內地及澳門的快船轉乘規定"></a>
+      <figcaption><b>香港機場：不入境轉快船規定</b><span class="muted">E2 轉機處購票，開船前 60 分鐘到櫃檯，行李憑收據轉運。</span></figcaption></figure>
+    <figure><a href="img/05-hkia-baggage.jpg" target="_blank" rel="noopener"><img src="img/05-hkia-baggage.jpg" alt="香港機場官網：行李直掛服務航空公司名單"></a>
+      <figcaption><b>香港機場：行李直掛航空公司名單</b><span class="muted">東莞虎門欄位，華航、長榮、國泰等皆打勾。</span></figcaption></figure>
+  </div>
+</section>
+
+<!-- 2 總表 -->
+<section id="overview">
+  <div class="sec-head"><span class="k">Itinerary</span><h2>行程總表</h2></div>
+  <div class="days">
+    <div class="day"><span class="dt">D1 · 1/14 週四</span><span class="ttl">啟程 · 海路進虎門</span>
+      <ul><li>CI903 飛香港</li><li>不入境轉 14:45 快船</li><li>虎門入境 → 松山湖</li><li>歡迎晚宴、行前說明</li></ul><span class="stay">住：松山湖</span></div>
+    <div class="day core"><span class="dt">D2 · 1/15 週五</span><span class="ttl">AIGC 品牌行銷影片實戰營</span>
+      <ul><li>開訓典禮</li><li>兩岸四位講師授課</li><li>兩岸混合分組製作短片</li><li>成果發表、結訓、頒證書</li></ul><span class="stay">住：松山湖</span></div>
+    <div class="day"><span class="dt">D3 · 1/16 週六</span><span class="ttl">企業參訪：華為 × OPPO</span>
+      <ul><li>華為松山湖溪流背坡村</li><li>XbotPark 機器人基地（加值）</li><li>OPPO 長安研發中心</li><li>晚上自由</li></ul><span class="stay">住：松山湖</span></div>
+    <div class="day"><span class="dt">D4 · 1/17 週日</span><span class="ttl">深度座談 · 東莞人文</span>
+      <ul><li>上午深度座談（半天）</li><li>可園（嶺南名園）</li><li>虎門林則徐銷煙池、鴉片戰爭博物館</li><li>惜別晚宴</li></ul><span class="stay">住：虎門（離碼頭近）</span></div>
+    <div class="day"><span class="dt">D5 · 1/18 週一</span><span class="ttl">虎門早茶 · 返程</span>
+      <ul><li>廣式早茶</li><li>碼頭預辦登機、行李直掛</li><li>12:00 快船回香港機場</li><li>17:35 飛桃園</li></ul><span class="stay">19:20 抵桃園</span></div>
+  </div>
+  <div class="note"><b>住宿安排：</b>前三晚住松山湖，華為、XbotPark、實戰營、座談都在同一區，車程最短。最後一晚移到虎門，週一早上到碼頭只要幾分鐘，不必一早拉車趕船。飯店由陸方安排，<span class="mk q">待確認</span>。</div>
+</section>
+
+<!-- 3 逐日 -->
+<section id="daily">
+  <div class="sec-head"><span class="k">Day by day</span><h2>逐日行程</h2></div>
+
+  <article class="dd">
+    <div class="dd-head"><span class="dt">D1 · 1/14（四）</span><h3>啟程：飛香港、海路進虎門</h3></div>
+    <div class="dd-body"><div class="tl">
+      <div class="t">05:30</div><div class="what"><b>桃園機場集合</b>，領隊統一報到。每人告知「香港轉快船往虎門」，行李收據自己收好。</div>
+      <div class="t">08:00</div><div class="what">中華航空 CI903 起飛 <span class="chip">約 2 小時 10 分</span></div>
+      <div class="t">10:10</div><div class="what">抵香港機場，<b>不入境</b>，領隊帶隊到 E2 轉機處快船櫃檯，統一購票、辦行李轉運</div>
+      <div class="t">11:00–13:30</div><div class="what">機場禁區內午餐、休息；領隊做第一次點名與行前說明</div>
+      <div class="t">13:45</div><div class="what"><b>最晚報到時間</b>（開船前 60 分鐘）</div>
+      <div class="t">14:45</div><div class="what">海天中轉大樓快船開船 <span class="chip">約 90 分</span> <span class="mk e">推估</span></div>
+      <div class="t">約 16:15</div><div class="what">抵虎門港澳客運碼頭，入境大陸（台胞證），<b>陸方接</b></div>
+      <div class="t">16:45</div><div class="what">遊覽車前往松山湖 <span class="chip">32 km · 40 分</span></div>
+      <div class="t">17:30</div><div class="what">飯店入住</div>
+      <div class="t">18:30</div><div class="what"><b>歡迎晚宴</b>，公布實戰營分組，提醒準備好工具帳號</div>
+    </div></div>
+  </article>
+
+  <article class="dd">
+    <div class="dd-head"><span class="dt">D2 · 1/15（五）</span><h3>AIGC 品牌行銷影片實戰營（全日）</h3><span class="muted">講師：台方 Mike、Kevin；陸方兩位老師（人選待提供）</span></div>
+    <div class="dd-body"><div class="tl">
+      <div class="t">08:30</div><div class="what">報到。場地候選：松山湖 XbotPark 或飯店會議廳 <span class="mk q">待確認</span></div>
+      <div class="t">09:00–09:30</div><div class="what"><b>開訓典禮</b>：雙方主辦致詞、講師介紹、團體照</div>
+      <div class="t">09:30–10:30</div><div class="what">第一堂｜大陸 AI 影片產業現況與工具生態｜陸方老師 A</div>
+      <div class="t">10:45–12:00</div><div class="what">第二堂｜品牌行銷影片企劃：從品牌定位到 AI 腳本與分鏡｜Mike</div>
+      <div class="t">12:00–13:00</div><div class="what">午餐（若場地在 XbotPark，可順道看展示區 20 分鐘）</div>
+      <div class="t">13:00–14:15</div><div class="what">第三堂｜AIGC 影片製作實作：生成畫面、配音、剪輯到成片｜Kevin</div>
+      <div class="t">14:15–15:00</div><div class="what">第四堂｜AI 影片的商業變現與平台投放｜陸方老師 B</div>
+      <div class="t">15:00–17:00</div><div class="what"><b>兩岸混合分組實戰</b>：每組替一個品牌做 30–60 秒 AI 行銷短片，四位講師巡場</div>
+      <div class="t">17:00–17:45</div><div class="what">各組成果發表＋講師講評</div>
+      <div class="t">17:45–18:15</div><div class="what"><b>結訓典禮、頒發證書</b>（兩岸主辦聯名，名義與格式 <span class="mk q">待確認</span>）</div>
+      <div class="t">18:30</div><div class="what">結訓晚宴</div>
+    </div>
+    <div class="note">台灣學員在大陸可能連不上部分境外 AI 工具。實作課請 Mike、Kevin 先確認可用工具，或請陸方老師準備當地工具與網路。</div>
+    </div>
+  </article>
+
+  <article class="dd">
+    <div class="dd-head"><span class="dt">D3 · 1/16（六）</span><h3>企業參訪：從研發基地到智能製造</h3></div>
+    <div class="dd-body"><div class="tl">
+      <div class="t">08:30</div><div class="what">飯店出發 <span class="chip">松山湖同區 約 10–15 分</span> <span class="mk e">推估</span></div>
+      <div class="t">09:00–11:30</div><div class="what"><b>華為松山湖溪流背坡村</b>：歐式建築群、園區小火車、研發基地導覽。不是開放景點，要陸方透過華為或政府管道申請，通常需提供姓名與證件號 <span class="mk q">待確認</span></div>
+      <div class="t">11:45–13:00</div><div class="what">松山湖午餐</div>
+      <div class="t">13:00–14:00</div><div class="what"><b>加值｜XbotPark 機器人基地</b>：李澤湘教授創辦的硬科技孵化器，看機器人新創「從 0 到 1」。官網可線上預約參觀 <span class="mk v">已查證</span></div>
+      <div class="t">14:00</div><div class="what">前往長安鎮 <span class="chip">15.6 km · 24 分</span></div>
+      <div class="t">14:30–16:30</div><div class="what"><b>OPPO 長安研發中心</b>（訪客中心、展覽室）或智能製造中心產線，參訪＋交流座談。需陸方申請 <span class="mk q">待確認</span></div>
+      <div class="t">16:45</div><div class="what">返回松山湖 <span class="chip">約 25 分</span></div>
+      <div class="t">晚上</div><div class="what">自由活動，松山湖湖畔散步</div>
+    </div>
+    <div class="note risk"><b>最大風險：</b>大企業週末通常不接待外賓。請陸方第一個確認華為、OPPO 能否在週六接待。若不行，改用下方「備案甲」。</div>
+    </div>
+  </article>
+
+  <article class="dd">
+    <div class="dd-head"><span class="dt">D4 · 1/17（日）</span><h3>深度座談 · 東莞人文（換住虎門）</h3></div>
+    <div class="dd-body"><div class="tl">
+      <div class="t">09:00–12:00</div><div class="what"><b>深度座談（半天）</b>。題目建議：「兩岸青年怎麼用 AI 做品牌與創業」。週日適合邀請當地青年、大學生一起參加；與談人 <span class="mk q">待確認</span></div>
+      <div class="t">12:00–13:00</div><div class="what">午餐，退房上車</div>
+      <div class="t">13:00</div><div class="what">前往莞城 <span class="chip">33.8 km · 55 分</span></div>
+      <div class="t">14:00–15:15</div><div class="what"><b>可園</b>：嶺南名園，清代庭園建築，莞城老街散步。開放時間 <span class="mk q">待確認</span></div>
+      <div class="t">15:15</div><div class="what">前往虎門 <span class="chip">33.4 km · 45 分</span></div>
+      <div class="t">16:00–17:15</div><div class="what"><b>林則徐銷煙池與鴉片戰爭博物館</b>。免費但需預約；網路資料顯示 17:30 停止售票 <span class="mk e">推估</span></div>
+      <div class="t">17:30</div><div class="what">入住虎門飯店</div>
+      <div class="t">18:30</div><div class="what"><b>惜別晚宴</b>，東莞地方菜</div>
+    </div>
+    <div class="note">替換選項：南社明清古村落（從松山湖 28 km · 45 分），保存完整的明清村落，適合拍照與影片素材。若選南社，就不去可園。</div>
+    </div>
+  </article>
+
+  <article class="dd">
+    <div class="dd-head"><span class="dt">D5 · 1/18（一）</span><h3>虎門早茶 · 返程</h3></div>
+    <div class="dd-body"><div class="tl">
+      <div class="t">08:00–09:30</div><div class="what"><b>廣式早茶</b>，輕鬆收尾</div>
+      <div class="t">09:30</div><div class="what">退房，行李上車</div>
+      <div class="t">10:15</div><div class="what">抵虎門港澳客運碼頭 <span class="chip">虎門鎮內 約 5–10 分</span> <span class="mk e">推估</span></div>
+      <div class="t">10:15–11:00</div><div class="what">航空公司預辦登機：<b>行李直接掛回桃園</b>、領登機證；辦大陸出境</div>
+      <div class="t">12:00</div><div class="what">快船開船（當天最後一班往機場的船）</div>
+      <div class="t">約 13:30</div><div class="what">抵香港機場海天中轉大樓，安檢後進航廈</div>
+      <div class="t">17:35</div><div class="what">中華航空飛桃園 <span class="chip">約 1 小時 45 分</span></div>
+      <div class="t">19:20</div><div class="what">抵達桃園，賦歸</div>
+    </div>
+    <div class="note">提醒團員：香港離境稅 HK$200 要在搭機日起 28 天內，自己上香港機場的退稅平台申請。</div>
+    </div>
+  </article>
+</section>
+
+<!-- 4 距離 -->
+<section id="distance">
+  <div class="sec-head"><span class="k">Distance</span><h2>交通距離表</h2></div>
+  <div class="tbl"><table>
+    <thead><tr><th>路段</th><th>用在</th><th class="num">距離</th><th class="num">車程</th><th>資料</th></tr></thead>
+    <tbody>
+      <tr><td>虎門港澳客運碼頭 → 華為溪流背坡村（松山湖）</td><td>D1</td><td class="num">32.0 km</td><td class="num">40 分</td><td><span class="mk v">Google 地圖</span></td></tr>
+      <tr><td>華為溪流背坡村 → OPPO 長安研發中心</td><td>D3</td><td class="num">15.6 km</td><td class="num">24 分</td><td><span class="mk v">Google 地圖</span></td></tr>
+      <tr><td>OPPO 長安研發中心 → 虎門港澳客運碼頭</td><td>備案乙</td><td class="num">23.0 km</td><td class="num">35 分</td><td><span class="mk v">Google 地圖</span></td></tr>
+      <tr><td>松山湖 → 可園</td><td>D4</td><td class="num">33.8 km</td><td class="num">55 分</td><td><span class="mk v">Google 地圖</span></td></tr>
+      <tr><td>可園 → 鴉片戰爭博物館（虎門）</td><td>D4</td><td class="num">33.4 km</td><td class="num">45 分</td><td><span class="mk v">Google 地圖</span></td></tr>
+      <tr><td>松山湖 → 南社明清古村落</td><td>D4 替換</td><td class="num">28.0 km</td><td class="num">45 分</td><td><span class="mk v">Google 地圖</span></td></tr>
+      <tr><td>鴉片戰爭博物館 → 虎門港澳客運碼頭</td><td>D5</td><td class="num">約 1.5 km</td><td class="num">5–10 分</td><td><span class="mk e">座標推估</span></td></tr>
+      <tr><td>松山湖飯店 ⇄ 華為、XbotPark</td><td>D2–D3</td><td class="num">同區</td><td class="num">10–15 分</td><td><span class="mk e">推估</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">車程是 2026-11-09 Google 地圖小客車即時值；遊覽車與尖峰時段請多抓 20–30%。Google 地圖把「虎門港澳客運碼頭」對應到「虎門鎮客運碼頭」，實際上下車點請陸方確認。</p>
+</section>
+
+<!-- 5 費用 -->
+<section id="cost">
+  <div class="sec-head"><span class="k">Budget</span><h2>費用試算（每人，新台幣）</h2></div>
+  <div class="tbl"><table>
+    <thead><tr><th>項目</th><th>依據</th><th class="num">低</th><th class="num">高</th></tr></thead>
+    <tbody>
+      <tr><td>來回機票（方案 A 中華航空）</td><td>Google 航班 5,265 ＋ 4,665，個人票</td><td class="num">9,930</td><td class="num">9,930</td></tr>
+      <tr><td>快船 去程 HK$370</td><td>官網票價 × 匯率約 4.1</td><td class="num">1,517</td><td class="num">1,517</td></tr>
+      <tr><td>快船 回程 RMB 370</td><td>官網票價 × 匯率約 4.5</td><td class="num">1,665</td><td class="num">1,665</td></tr>
+      <tr><td>退回香港離境稅 HK$200</td><td>到港後 28 天內線上申請</td><td class="num">−820</td><td class="num">−820</td></tr>
+      <tr><td>台胞證</td><td>首次申辦免證件費、只付代辦費；續辦約 1,500</td><td class="num">600</td><td class="num">1,500</td></tr>
+      <tr><td>旅平險＋旅遊不便險</td><td>依保額</td><td class="num">600</td><td class="num">1,500</td></tr>
+      <tr><td>網路（eSIM／漫遊 5 天）</td><td></td><td class="num">300</td><td class="num">600</td></tr>
+      <tr class="total"><td>每人小計</td><td>不含個人零用、伴手禮</td><td class="num">13,792</td><td class="num">15,892</td></tr>
+    </tbody>
+  </table></div>
+  <div class="two">
+    <div class="card"><h3>團體總額</h3>
+      <div class="tbl"><table><thead><tr><th>人數</th><th class="num">低</th><th class="num">高</th></tr></thead><tbody>
+        <tr><td>20 人</td><td class="num">275,840</td><td class="num">317,840</td></tr>
+        <tr><td>30 人</td><td class="num">413,760</td><td class="num">476,760</td></tr>
+      </tbody></table></div></div>
+    <div class="card"><h3>對外報價建議</h3>
+      <p><b class="mono">每人 NT$16,000–18,000</b>，多抓約 15% 緩衝，吸收團體票價差與匯率變動。另請團員自備零用金約 NT$2,000–5,000。</p>
+      <p class="muted">前提：陸方招待包含住宿、餐食、當地包車、場地與門票。招待範圍 <span class="mk q">待確認</span>；若有不含的項目，要另外加價。匯率為粗估 <span class="mk e">推估</span>。</p></div>
+  </div>
+</section>
+
+<!-- 6 風險 -->
+<section id="risk">
+  <div class="sec-head"><span class="k">Contingency</span><h2>風險與備案</h2></div>
+  <div class="two">
+    <div class="card"><h3>週末參訪：華為、OPPO 週六可能不接待</h3>
+      <p><b>備案甲（建議）：D2、D3 對調。</b>1/15 週五參訪華為、XbotPark、OPPO；1/16 週六上實戰營。參訪排在平日最穩，週末上課也方便陸方學員參加。</p>
+      <p><b>備案乙：OPPO 移到 D5 早上。</b>D4 晚上已住虎門；週一 08:30–10:00 參訪 OPPO 長安，再開 35 分鐘到碼頭。缺點是很趕，碼頭最晚 11:00 要報到，誤點就沒有下一班船。</p></div>
+    <div class="card"><h3>去程航班延誤，趕不上 14:45 的船</h3>
+      <p>入境香港、提領行李，改搭高鐵從香港西九龍到虎門站或深圳，請陸方改到車站接。這條路線不能直掛行李，西九龍到虎門的班次與票價 <span class="mk q">待確認</span>。出發前要先跟陸方約好備案接送點。</p></div>
+    <div class="card"><h3>博物館週一可能休館</h3>
+      <p>行程已把鴉片戰爭博物館放在 D4 週日下午，避開週一。D5 早上只安排早茶，不排需要開館的景點。</p></div>
+    <div class="card"><h3>團體人數與船位</h3>
+      <p>每天只有 2 班船，座位數不明。<b>確定人數後立刻跟獅子洋飛航訂團體位</b>，不要等到出發前才買。</p></div>
+  </div>
+</section>
+
+<!-- 7 待辦 -->
+<section id="todo">
+  <div class="sec-head"><span class="k">Next</span><h2>待確認清單</h2></div>
+  <div class="two">
+    <div class="card"><h3>請陸方確認</h3><ul class="checks">
+      <li>華為、OPPO 週六能否接待（決定是否改備案甲）</li>
+      <li>參訪需要的團員資料與截止日</li>
+      <li>1/14 約 16:15 虎門碼頭接、1/18 10:15 送</li>
+      <li>住宿：前三晚松山湖、第四晚虎門</li>
+      <li>陸方兩位講師人選與課程題目</li>
+      <li>證書發證名義與格式</li>
+      <li>實戰營與座談場地、與談人、陸方學員</li>
+      <li>招待範圍（住宿、餐食、包車、門票）</li>
+    </ul></div>
+    <div class="card"><h3>台方準備</h3><ul class="checks">
+      <li>旅行社團體票報價（方案 A 或 B）</li>
+      <li>船票團體訂位（去 1/14 14:45、回 1/18 12:00）</li>
+      <li>Mike、Kevin 課程大綱與分組題目</li>
+      <li>確認實作課在大陸可用的 AI 工具</li>
+      <li>團員護照、台胞證效期</li>
+      <li>旅平險＋不便險、網路</li>
+      <li>行前說明會：轉船流程、行李收據、退稅</li>
+    </ul></div>
+  </div>
+  <div class="note">團員名單、證件號碼請透過旅行社或陸方指定的管道傳送，不要貼到 AI 工作區。要寄給陸方或學員的正式信件、公告，請先出草稿給人工確認後再送出。</div>
+</section>
+
+<footer>
+  <b>資料來源（2026-11-09 查詢）</b>
+  <ol>
+    <li><a href="https://www.hongkongairport.com/tc/transport/mainland-connection/ferry-transfer.page" target="_blank" rel="noopener">香港國際機場｜海天中轉大樓快船（轉乘規定、行李直掛、離境稅退稅）</a></li>
+    <li><a href="https://www.hongkongairport.com/tc/transport/mainland-connection/airline-check-in-at-prd-and-macao.page" target="_blank" rel="noopener">香港國際機場｜中國內地及澳門預辦登機服務</a></li>
+    <li><a href="https://www.seasyoung.com/aboutus.aspx" target="_blank" rel="noopener">獅子洋飛航｜船期價目表</a></li>
+    <li><a href="https://www.google.com/travel/flights" target="_blank" rel="noopener">Google 航班｜1/14 TPE→HKG、1/18 HKG→TPE 查詢</a></li>
+    <li>Google 地圖｜各路段小客車車程</li>
+    <li><a href="https://xbotpark.com/contactus/" target="_blank" rel="noopener">XbotPark｜預約參觀</a></li>
+    <li><a href="https://cn.chinadaily.com.cn/a/202610/30/WS6ae40c25e4b09a165c792828.html" target="_blank" rel="noopener">中國日報｜探訪華為松山湖與 XbotPark</a></li>
+    <li><a href="https://zhuanlan.zhihu.com/p/1982027467406476983" target="_blank" rel="noopener">知乎｜華為松山湖基地參觀攻略（非官方）</a></li>
+    <li><a href="http://www.archina.com/index.php?g=works&m=index&a=show&id=16888" target="_blank" rel="noopener">建築案例｜OPPO 長安研發中心</a></li>
+    <li><a href="https://gs.ctrip.com/html5/you/sight/humentown120132/23056.html" target="_blank" rel="noopener">攜程｜鴉片戰爭博物館開放時間（非官方）</a></li>
+    <li><a href="https://www.worldjournal.com/wj/story/121475/8831569" target="_blank" rel="noopener">世界日報｜台胞證首次申辦免證件費</a></li>
+  </ol>
+</footer>
+</div>
+
+</body>
+</html>
