@@ -105,6 +105,7 @@ tr.total td{font-weight:700;border-top:2px solid var(--ink)}
 .tl{display:grid;grid-template-columns:118px 1fr;column-gap:14px}
 .tl > div{padding:9px 0;border-bottom:1px dashed var(--line)}
 .tl > div:nth-last-child(-n+2){border-bottom:0}
+.sources ol{margin:0;padding-left:20px;display:grid;gap:2px;font-size:13px;color:var(--muted);word-break:break-all}
 .tl .t{font-size:13.5px;font-weight:600;color:var(--river);padding-top:11px}
 .tl .what b{font-weight:700}
 .chip{display:inline-block;font-family:var(--f-mono);font-size:12px;padding:0 7px;border-radius:4px;border:1px solid var(--line);color:var(--muted);margin-left:4px;white-space:nowrap}
@@ -198,96 +199,9 @@ img{max-width:100%}
   <p class="screen-only"><a href="dongguan-ai-tour-2027.pdf">下載 PDF 版（A4）</a></p>
 </header>
 
-<!-- 1 交通 -->
-<section id="transport">
-  <div class="sec-head"><span class="k">Route</span><h2>交通：飛香港、不入境、搭船直達虎門</h2></div>
-  <p>全程不入境香港、不提領行李，行李由桃園直掛，抵達虎門後入境大陸。虎門⇄香港機場<b>船班每天每個方向只有 2 班</b>，航班時間依船班安排。</p>
-
-  <div class="route" aria-label="去程路線圖">
-    <ol>
-      <li><span class="t">08:00</span><span class="n">桃園 TPE</span><span class="d">國泰航空 CX407 起飛</span></li>
-      <li><span class="t">10:10</span><span class="n">香港機場 HKG</span><span class="d">不走入境，前往 E2 轉機處快船櫃檯</span></li>
-      <li class="sea"><span class="t">13:45 前</span><span class="n">E2 快船櫃檯</span><span class="d">買船票、出示行李收據、辦轉運</span></li>
-      <li class="sea"><span class="t">14:45</span><span class="n">海天中轉大樓</span><span class="d">獅子洋飛航快船開船，約 90 分鐘</span></li>
-      <li><span class="t">約 16:15</span><span class="n">虎門港澳客運碼頭</span><span class="d">入境大陸，陸方接</span></li>
-      <li><span class="t">約 17:30</span><span class="n">松山湖飯店</span><span class="d">遊覽車 32 km · 約 40 分</span></li>
-    </ol>
-  </div>
-
-  <h3>交通方案比較</h3>
-  <p class="muted">機票價格主要取決於去程時間：要接上當天 14:45 的快船，必須早上抵達香港，早班機多為傳統航空；中午以後的平價航班，只能改為入境香港再走陸路。三個方案的回程都在虎門搭 12:00 快船、行李直掛回台。</p>
-  <div class="tbl"><table>
-    <thead><tr><th>方案</th><th>去程 1/14（四）</th><th>到松山湖</th><th class="num">機票來回（起）</th><th>優點</th><th>要注意</th></tr></thead>
-    <tbody>
-      <tr class="pick"><td><span class="pill">方案一</span><br>早班機直達</td><td>早班傳統航空 → 不入境 → 14:45 快船 → 虎門</td><td class="t">約 17:30</td><td class="num">7,592–9,253</td><td>行李直掛、不入境香港、轉乘最簡單</td><td>05:30 桃園集合</td></tr>
-      <tr><td><span class="pill">方案二</span><br>中午航班＋陸路</td><td>大灣區航空 11:35 或香港航空 11:45（含託運行李）→ 入境香港 → 跨境巴士到深圳灣口岸 → 陸方接</td><td class="t">約 18:30–19:00</td><td class="num">6,119–6,688</td><td>每人省約 NT$2,400–3,500；不用早起</td><td>入境香港、自己提行李、兩次通關</td></tr>
-      <tr><td><span class="pill">方案三</span><br>廉航＋陸路</td><td>香港快運 14:50（不含託運行李）→ 入境香港 → 跨境巴士到深圳灣口岸 → 陸方接</td><td class="t">約 20:30</td><td class="num">4,600–4,803</td><td>機票票面最便宜</td><td>加購來回託運行李後總價反而高於方案二；抵達最晚，D1 晚宴取消</td></tr>
-    </tbody>
-  </table></div>
-
-  <h3>方案一：早班航班（1/14 去、1/18 回，經濟艙含稅，2026-11-09 查詢）</h3>
-  <div class="tbl"><table>
-    <thead><tr><th>航空公司</th><th>去程</th><th>回程</th><th class="num">Trip.com 來回起價</th><th class="num">Google 同航空來回</th></tr></thead>
-    <tbody>
-      <tr><td>星宇航空</td><td class="t">08:40 → 10:45</td><td class="t">19:45 → 21:40</td><td class="num">7,592</td><td class="num">—</td></tr>
-      <tr><td>長榮航空</td><td class="t">BR851 08:10 → 10:10</td><td class="t">15:30 → 17:10</td><td class="num">7,831</td><td class="num">9,253</td></tr>
-      <tr><td>中華航空</td><td class="t">CI903 08:00 → 10:10</td><td class="t">17:35 → 19:20</td><td class="num">7,859</td><td class="num">9,214</td></tr>
-      <tr><td>國泰航空</td><td class="t">CX407 08:00 → 10:10</td><td class="t">18:25 → 20:10</td><td class="num">7,972</td><td class="num">8,914</td></tr>
-    </tbody>
-  </table></div>
-  <p class="muted">Trip.com 價格為來回起價，實際依所選回程班次而異；Google 為同一航空公司去回程的來回價。團體票以旅行社報價為準。以上航空公司皆支援香港機場轉快船、行李直掛虎門。</p>
-
-  <h3>方案二、三：首日陸路接駁</h3>
-  <div class="steps">
-    <div class="step"><span class="s">香港機場</span><p>入境香港（台灣居民需事先線上辦理預辦入境登記），提領行李。</p></div>
-    <div class="step"><span class="s">二號客運大樓 L3</span><p>內地／澳門交通及旅遊服務中心搭跨境巴士至深圳灣口岸（中旅巴士、永東、冠忠環島、三通）。永東直巴約 07:00–21:45、約 30 分鐘一班，單程 HK$150。</p></div>
-    <div class="step"><span class="s">深圳灣口岸</span><p>入境大陸，陸方大巴接駁至松山湖 <span class="chip">56.7 km · 58 分</span></p></div>
-    <div class="step"><span class="s">回程</span><p>與方案一相同：虎門 12:00 快船、行李直掛；搭 15:30 之後的航班回台。</p></div>
-  </div>
-
-  <h3>船班與票價</h3>
-  <div class="tbl"><table>
-    <thead><tr><th>方向</th><th>班次</th><th class="num">經濟艙</th><th class="num">豪華艙</th><th class="num">尊豪艙</th><th>本團搭乘</th></tr></thead>
-    <tbody>
-      <tr><td>香港機場 → 虎門</td><td class="t">10:00 · 14:45</td><td class="num">HK$370</td><td class="num">HK$490</td><td class="num">HK$610</td><td>1/14 14:45</td></tr>
-      <tr><td>虎門 → 香港機場</td><td class="t">07:50 · 12:00</td><td class="num">RMB 370</td><td class="num">RMB 470</td><td class="num">RMB 570</td><td>1/18 12:00</td></tr>
-    </tbody>
-  </table></div>
-  <p class="muted">營運商：獅子洋飛航（東莞虎門龍威客運）。網上購票 booking.seasyoung.com，香港機場 E2 櫃檯亦可購買。團體座位需提早向營運商預訂。</p>
-
-  <h3>行李直掛怎麼走</h3>
-  <div class="steps">
-    <div class="step"><span class="s">桃園報到</span><p>跟櫃檯說「到香港轉海天快船往虎門」。<b>每人保管好行李託運收據。</b></p></div>
-    <div class="step"><span class="s">香港落地</span><p><b>不走入境、不去行李轉盤</b>，跟著指標到 E2 轉機處快船票務櫃檯。已入境的人不能再回來搭船。</p></div>
-    <div class="step"><span class="s">E2 櫃檯</span><p>出示當天機票或登機證存根、船票、護照與台胞證、行李收據。有託運行李的人要在開船前 60 分鐘到。</p></div>
-    <div class="step"><span class="s">回程</span><p>在虎門碼頭直接託運行李回台灣、拿登機證，開船前 60 分鐘到櫃檯。到香港機場後，在 28 天內上網申請退回離境稅 HK$200。</p></div>
-  </div>
-  <div class="note ok">支援東莞虎門行李直掛的航空公司包括：<b>中華航空、長榮、國泰、華信、星宇、香港航空、香港快運、大灣區航空</b>（香港機場官網）。</div>
-
-  <h3 id="shots-print">附：航班與船班資料截圖（2026-11-09）</h3>
-  <div class="shots">
-    <figure><a href="img/10-trip-morning.jpg" target="_blank" rel="noopener"><img src="img/10-trip-morning.jpg" alt="Trip.com 1/14 去 1/18 回早班直飛航班來回價"></a>
-      <figcaption><b>Trip.com 早班直飛來回價</b><span class="muted">依抵達時間排序：長榮 7,831、華航 7,859、國泰 7,972、星宇 7,592。</span></figcaption></figure>
-    <figure><a href="img/00-roundtrip.jpg" target="_blank" rel="noopener"><img src="img/00-roundtrip.jpg" alt="Google 航班：1/14 去 1/18 回，去程航班清單與來回最低價"></a>
-      <figcaption><b>Google 來回最低價 NT$4,361 起（廉價航空）</b><span class="muted">去程清單上的來回價，是搭配最便宜回程的組合，可能混搭不同航空公司，僅供比價。</span></figcaption></figure>
-    <figure><a href="img/00-roundtrip-cx.jpg" target="_blank" rel="noopener"><img src="img/00-roundtrip-cx.jpg" alt="國泰航空 1/14 08:00 去程後的回程清單與來回總價"></a>
-      <figcaption><b>Google 國泰同航空來回 NT$8,914</b><span class="muted">去程 CX407 08:00，回程 15:45／18:25 皆同價。</span></figcaption></figure>
-    <figure><a href="img/00-roundtrip-ci.jpg" target="_blank" rel="noopener"><img src="img/00-roundtrip-ci.jpg" alt="中華航空 1/14 08:00 去程後的回程清單與來回總價"></a>
-      <figcaption><b>Google 華航同航空來回 NT$9,214</b><span class="muted">去程 CI903 08:00，回程 17:35。</span></figcaption></figure>
-    <figure><a href="img/00-roundtrip-br.jpg" target="_blank" rel="noopener"><img src="img/00-roundtrip-br.jpg" alt="長榮航空 1/14 09:50 去程後的回程清單與來回總價"></a>
-      <figcaption><b>Google 長榮同航空來回 NT$9,253</b><span class="muted">去程 BR867 09:50，回程 15:30。</span></figcaption></figure>
-    <figure><a href="img/03-ferry.jpg" target="_blank" rel="noopener"><img src="img/03-ferry.jpg" alt="獅子洋飛航官網：機場航線船期價目表"></a>
-      <figcaption><b>虎門 ⇄ 香港機場 船期價目表</b><span class="muted">獅子洋飛航官網。</span></figcaption></figure>
-    <figure><a href="img/04-hkia-transfer.jpg" target="_blank" rel="noopener"><img src="img/04-hkia-transfer.jpg" alt="香港機場官網：前往中國內地及澳門的快船轉乘規定"></a>
-      <figcaption><b>香港機場：不入境轉快船規定</b><span class="muted">香港機場官網。</span></figcaption></figure>
-    <figure><a href="img/05-hkia-baggage.jpg" target="_blank" rel="noopener"><img src="img/05-hkia-baggage.jpg" alt="香港機場官網：行李直掛服務航空公司名單"></a>
-      <figcaption><b>香港機場：行李直掛航空公司名單</b><span class="muted">香港機場官網。</span></figcaption></figure>
-  </div>
-</section>
-
-<!-- 2 總表 -->
+<!-- 1 總覽 -->
 <section id="overview">
-  <div class="sec-head"><span class="k">Itinerary</span><h2>行程總表</h2></div>
+  <div class="sec-head"><span class="k">Overview</span><h2>行程總表</h2></div>
   <div class="days">
     <div class="day"><span class="dt">D1 · 1/14 週四</span><span class="ttl">啟程 · 海路進虎門</span>
       <ul><li>CX407 飛香港</li><li>不入境轉 14:45 快船</li><li>虎門入境 → 松山湖</li><li>歡迎晚宴、行前說明</li></ul><span class="stay">住：松山湖</span></div>
@@ -303,7 +217,7 @@ img{max-width:100%}
   <div class="note"><b>住宿：</b>1/14–1/16 住松山湖（鄰近實戰營、座談與華為、XbotPark）；1/17 住虎門（鄰近返程碼頭）。</div>
 </section>
 
-<!-- 3 逐日 -->
+<!-- 2 逐日 -->
 <section id="daily">
   <div class="sec-head"><span class="k">Day by day</span><h2>逐日行程</h2></div>
 
@@ -389,28 +303,41 @@ img{max-width:100%}
   </article>
 </section>
 
-<!-- 4 距離 -->
-<section id="distance">
-  <div class="sec-head"><span class="k">Distance</span><h2>交通距離表</h2></div>
+<!-- 3 方案比較 -->
+<section id="options">
+  <div class="sec-head"><span class="k">Options</span><h2>交通方案與費用</h2></div>
+  <h3>交通方案比較</h3>
+  <p class="muted">機票價格主要取決於去程時間：要接上當天 14:45 的快船，必須早上抵達香港，早班機多為傳統航空；中午以後的平價航班，只能改為入境香港再走陸路。三個方案的回程都在虎門搭 12:00 快船、行李直掛回台。</p>
   <div class="tbl"><table>
-    <thead><tr><th>路段</th><th>日期</th><th class="num">距離</th><th class="num">車程</th></tr></thead>
+    <thead><tr><th>方案</th><th>去程 1/14（四）</th><th>到松山湖</th><th class="num">機票來回（起）</th><th>優點</th><th>要注意</th></tr></thead>
     <tbody>
-      <tr><td>虎門港澳客運碼頭 → 華為溪流背坡村（松山湖）</td><td>D1</td><td class="num">32.0 km</td><td class="num">40 分</td></tr>
-      <tr><td>華為溪流背坡村 → OPPO 長安研發中心</td><td>D3</td><td class="num">15.6 km</td><td class="num">24 分</td></tr>
-      <tr><td>OPPO 長安研發中心 → 虎門港澳客運碼頭</td><td>備案乙</td><td class="num">23.0 km</td><td class="num">35 分</td></tr>
-      <tr><td>松山湖 → 可園</td><td>D4</td><td class="num">33.8 km</td><td class="num">55 分</td></tr>
-      <tr><td>可園 → 鴉片戰爭博物館（虎門）</td><td>D4</td><td class="num">33.4 km</td><td class="num">45 分</td></tr>
-      <tr><td>松山湖 → 南社明清古村落</td><td>D4 備選</td><td class="num">28.0 km</td><td class="num">45 分</td></tr>
-      <tr><td>鴉片戰爭博物館 → 虎門港澳客運碼頭</td><td>D5</td><td class="num">約 1.5 km</td><td class="num">5–10 分</td></tr>
-      <tr><td>松山湖飯店 ⇄ 華為、XbotPark</td><td>D2–D3</td><td class="num">同區</td><td class="num">10–15 分</td></tr>
+      <tr class="pick"><td><span class="pill">方案一</span><br>早班機直達</td><td>早班傳統航空 → 不入境 → 14:45 快船 → 虎門</td><td class="t">約 17:30</td><td class="num">7,592–9,253</td><td>行李直掛、不入境香港、轉乘最簡單</td><td>05:30 桃園集合</td></tr>
+      <tr><td><span class="pill">方案二</span><br>中午航班＋陸路</td><td>大灣區航空 11:35 或香港航空 11:45（含託運行李）→ 入境香港 → 跨境巴士到深圳灣口岸 → 陸方接</td><td class="t">約 18:30–19:00</td><td class="num">6,119–6,688</td><td>每人省約 NT$2,400–3,500；不用早起</td><td>入境香港、自己提行李、兩次通關</td></tr>
+      <tr><td><span class="pill">方案三</span><br>廉航＋陸路</td><td>香港快運 14:50（不含託運行李）→ 入境香港 → 跨境巴士到深圳灣口岸 → 陸方接</td><td class="t">約 20:30</td><td class="num">4,600–4,803</td><td>機票票面最便宜</td><td>加購來回託運行李後總價反而高於方案二；抵達最晚，D1 晚宴取消</td></tr>
     </tbody>
   </table></div>
-  <p class="muted">車程為 Google 地圖小客車參考時間，遊覽車與尖峰時段約再加 20–30%。</p>
-</section>
 
-<!-- 5 費用 -->
-<section id="cost">
-  <div class="sec-head"><span class="k">Budget</span><h2>費用試算（每人，新台幣）</h2></div>
+  <h3>方案一：早班航班（1/14 去、1/18 回，經濟艙含稅，2026-11-09 查詢）</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>航空公司</th><th>去程</th><th>回程</th><th class="num">Trip.com 來回起價</th><th class="num">Google 同航空來回</th></tr></thead>
+    <tbody>
+      <tr><td>星宇航空</td><td class="t">08:40 → 10:45</td><td class="t">19:45 → 21:40</td><td class="num">7,592</td><td class="num">—</td></tr>
+      <tr><td>長榮航空</td><td class="t">BR851 08:10 → 10:10</td><td class="t">15:30 → 17:10</td><td class="num">7,831</td><td class="num">9,253</td></tr>
+      <tr><td>中華航空</td><td class="t">CI903 08:00 → 10:10</td><td class="t">17:35 → 19:20</td><td class="num">7,859</td><td class="num">9,214</td></tr>
+      <tr><td>國泰航空</td><td class="t">CX407 08:00 → 10:10</td><td class="t">18:25 → 20:10</td><td class="num">7,972</td><td class="num">8,914</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">Trip.com 價格為來回起價，實際依所選回程班次而異；Google 為同一航空公司去回程的來回價。團體票以旅行社報價為準。以上航空公司皆支援香港機場轉快船、行李直掛虎門。</p>
+
+  <h3>方案二、三：首日陸路接駁</h3>
+  <div class="steps">
+    <div class="step"><span class="s">香港機場</span><p>入境香港（台灣居民需事先線上辦理預辦入境登記），提領行李。</p></div>
+    <div class="step"><span class="s">二號客運大樓 L3</span><p>內地／澳門交通及旅遊服務中心搭跨境巴士至深圳灣口岸（中旅巴士、永東、冠忠環島、三通）。永東直巴約 07:00–21:45、約 30 分鐘一班，單程 HK$150。</p></div>
+    <div class="step"><span class="s">深圳灣口岸</span><p>入境大陸，陸方大巴接駁至松山湖 <span class="chip">56.7 km · 58 分</span></p></div>
+    <div class="step"><span class="s">回程</span><p>與方案一相同：虎門 12:00 快船、行李直掛；搭 15:30 之後的航班回台。</p></div>
+  </div>
+
+  <h3>費用試算（每人，新台幣）</h3>
   <div class="tbl"><table>
     <thead><tr><th>項目</th><th class="num">方案一 早班機直達</th><th class="num">方案二 中午航班＋陸路</th><th class="num">方案三 廉航＋陸路</th></tr></thead>
     <tbody>
@@ -439,11 +366,8 @@ img{max-width:100%}
       </ul>
       <p class="muted">台胞證 600–1,500、保險 600–1,500、網路 300–600；匯率 HK$1≈NT$4.1、RMB1≈NT$4.5。以陸方招待住宿、餐食、當地交通、場地與門票估算；零用金自備約 NT$2,000–5,000。</p></div>
   </div>
-</section>
 
-<!-- 6 風險 -->
-<section id="risk">
-  <div class="sec-head"><span class="k">Contingency</span><h2>備案</h2></div>
+  <h3>備案</h3>
   <div class="two">
     <div class="card"><h3>企業參訪若無法安排在週六</h3>
       <p><b>備案甲：D2、D3 對調。</b>1/15（五）參訪華為、XbotPark、OPPO；1/16（六）舉行實戰營。</p>
@@ -453,7 +377,43 @@ img{max-width:100%}
   </div>
 </section>
 
-<!-- 7 待辦 -->
+<!-- 4 為什麼 -->
+<section id="why">
+  <div class="sec-head"><span class="k">Why</span><h2>為什麼這樣安排：船班與轉乘</h2></div>
+  <p>全程不入境香港、不提領行李，行李由桃園直掛，抵達虎門後入境大陸。虎門⇄香港機場<b>船班每天每個方向只有 2 班</b>，航班時間依船班安排。</p>
+
+  <div class="route" aria-label="去程路線圖">
+    <ol>
+      <li><span class="t">08:00</span><span class="n">桃園 TPE</span><span class="d">國泰航空 CX407 起飛</span></li>
+      <li><span class="t">10:10</span><span class="n">香港機場 HKG</span><span class="d">不走入境，前往 E2 轉機處快船櫃檯</span></li>
+      <li class="sea"><span class="t">13:45 前</span><span class="n">E2 快船櫃檯</span><span class="d">買船票、出示行李收據、辦轉運</span></li>
+      <li class="sea"><span class="t">14:45</span><span class="n">海天中轉大樓</span><span class="d">獅子洋飛航快船開船，約 90 分鐘</span></li>
+      <li><span class="t">約 16:15</span><span class="n">虎門港澳客運碼頭</span><span class="d">入境大陸，陸方接</span></li>
+      <li><span class="t">約 17:30</span><span class="n">松山湖飯店</span><span class="d">遊覽車 32 km · 約 40 分</span></li>
+    </ol>
+  </div>
+
+  <h3>船班與票價</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>方向</th><th>班次</th><th class="num">經濟艙</th><th class="num">豪華艙</th><th class="num">尊豪艙</th><th>本團搭乘</th></tr></thead>
+    <tbody>
+      <tr><td>香港機場 → 虎門</td><td class="t">10:00 · 14:45</td><td class="num">HK$370</td><td class="num">HK$490</td><td class="num">HK$610</td><td>1/14 14:45</td></tr>
+      <tr><td>虎門 → 香港機場</td><td class="t">07:50 · 12:00</td><td class="num">RMB 370</td><td class="num">RMB 470</td><td class="num">RMB 570</td><td>1/18 12:00</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">營運商：獅子洋飛航（東莞虎門龍威客運）。網上購票 booking.seasyoung.com，香港機場 E2 櫃檯亦可購買。團體座位需提早向營運商預訂。</p>
+
+  <h3>行李直掛怎麼走</h3>
+  <div class="steps">
+    <div class="step"><span class="s">桃園報到</span><p>跟櫃檯說「到香港轉海天快船往虎門」。<b>每人保管好行李託運收據。</b></p></div>
+    <div class="step"><span class="s">香港落地</span><p><b>不走入境、不去行李轉盤</b>，跟著指標到 E2 轉機處快船票務櫃檯。已入境的人不能再回來搭船。</p></div>
+    <div class="step"><span class="s">E2 櫃檯</span><p>出示當天機票或登機證存根、船票、護照與台胞證、行李收據。有託運行李的人要在開船前 60 分鐘到。</p></div>
+    <div class="step"><span class="s">回程</span><p>在虎門碼頭直接託運行李回台灣、拿登機證，開船前 60 分鐘到櫃檯。到香港機場後，在 28 天內上網申請退回離境稅 HK$200。</p></div>
+  </div>
+  <div class="note ok">支援東莞虎門行李直掛的航空公司包括：<b>中華航空、長榮、國泰、華信、星宇、香港航空、香港快運、大灣區航空</b>（香港機場官網）。</div>
+</section>
+
+<!-- 5 待確認 -->
 <section id="todo">
   <div class="sec-head"><span class="k">Next</span><h2>待確認事項</h2></div>
   <div class="two">
@@ -479,9 +439,47 @@ img{max-width:100%}
   </div>
 </section>
 
-<footer>
-  <b>資料來源（2026-11-09 查詢）</b>
-  <ol>
+<!-- 6 參考資料 -->
+<section id="reference">
+  <div class="sec-head"><span class="k">Reference</span><h2>參考資料</h2></div>
+  <h3>交通距離表</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>路段</th><th>日期</th><th class="num">距離</th><th class="num">車程</th></tr></thead>
+    <tbody>
+      <tr><td>虎門港澳客運碼頭 → 華為溪流背坡村（松山湖）</td><td>D1</td><td class="num">32.0 km</td><td class="num">40 分</td></tr>
+      <tr><td>華為溪流背坡村 → OPPO 長安研發中心</td><td>D3</td><td class="num">15.6 km</td><td class="num">24 分</td></tr>
+      <tr><td>OPPO 長安研發中心 → 虎門港澳客運碼頭</td><td>備案乙</td><td class="num">23.0 km</td><td class="num">35 分</td></tr>
+      <tr><td>松山湖 → 可園</td><td>D4</td><td class="num">33.8 km</td><td class="num">55 分</td></tr>
+      <tr><td>可園 → 鴉片戰爭博物館（虎門）</td><td>D4</td><td class="num">33.4 km</td><td class="num">45 分</td></tr>
+      <tr><td>松山湖 → 南社明清古村落</td><td>D4 備選</td><td class="num">28.0 km</td><td class="num">45 分</td></tr>
+      <tr><td>鴉片戰爭博物館 → 虎門港澳客運碼頭</td><td>D5</td><td class="num">約 1.5 km</td><td class="num">5–10 分</td></tr>
+      <tr><td>松山湖飯店 ⇄ 華為、XbotPark</td><td>D2–D3</td><td class="num">同區</td><td class="num">10–15 分</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">車程為 Google 地圖小客車參考時間，遊覽車與尖峰時段約再加 20–30%。</p>
+
+  <h3 id="shots-print">附：航班與船班資料截圖（2026-11-09）</h3>
+  <div class="shots">
+    <figure><a href="img/10-trip-morning.jpg" target="_blank" rel="noopener"><img src="img/10-trip-morning.jpg" alt="Trip.com 1/14 去 1/18 回早班直飛航班來回價"></a>
+      <figcaption><b>Trip.com 早班直飛來回價</b><span class="muted">依抵達時間排序：長榮 7,831、華航 7,859、國泰 7,972、星宇 7,592。</span></figcaption></figure>
+    <figure><a href="img/00-roundtrip.jpg" target="_blank" rel="noopener"><img src="img/00-roundtrip.jpg" alt="Google 航班：1/14 去 1/18 回，去程航班清單與來回最低價"></a>
+      <figcaption><b>Google 來回最低價 NT$4,361 起（廉價航空）</b><span class="muted">去程清單上的來回價，是搭配最便宜回程的組合，可能混搭不同航空公司，僅供比價。</span></figcaption></figure>
+    <figure><a href="img/00-roundtrip-cx.jpg" target="_blank" rel="noopener"><img src="img/00-roundtrip-cx.jpg" alt="國泰航空 1/14 08:00 去程後的回程清單與來回總價"></a>
+      <figcaption><b>Google 國泰同航空來回 NT$8,914</b><span class="muted">去程 CX407 08:00，回程 15:45／18:25 皆同價。</span></figcaption></figure>
+    <figure><a href="img/00-roundtrip-ci.jpg" target="_blank" rel="noopener"><img src="img/00-roundtrip-ci.jpg" alt="中華航空 1/14 08:00 去程後的回程清單與來回總價"></a>
+      <figcaption><b>Google 華航同航空來回 NT$9,214</b><span class="muted">去程 CI903 08:00，回程 17:35。</span></figcaption></figure>
+    <figure><a href="img/00-roundtrip-br.jpg" target="_blank" rel="noopener"><img src="img/00-roundtrip-br.jpg" alt="長榮航空 1/14 09:50 去程後的回程清單與來回總價"></a>
+      <figcaption><b>Google 長榮同航空來回 NT$9,253</b><span class="muted">去程 BR867 09:50，回程 15:30。</span></figcaption></figure>
+    <figure><a href="img/03-ferry.jpg" target="_blank" rel="noopener"><img src="img/03-ferry.jpg" alt="獅子洋飛航官網：機場航線船期價目表"></a>
+      <figcaption><b>虎門 ⇄ 香港機場 船期價目表</b><span class="muted">獅子洋飛航官網。</span></figcaption></figure>
+    <figure><a href="img/04-hkia-transfer.jpg" target="_blank" rel="noopener"><img src="img/04-hkia-transfer.jpg" alt="香港機場官網：前往中國內地及澳門的快船轉乘規定"></a>
+      <figcaption><b>香港機場：不入境轉快船規定</b><span class="muted">香港機場官網。</span></figcaption></figure>
+    <figure><a href="img/05-hkia-baggage.jpg" target="_blank" rel="noopener"><img src="img/05-hkia-baggage.jpg" alt="香港機場官網：行李直掛服務航空公司名單"></a>
+      <figcaption><b>香港機場：行李直掛航空公司名單</b><span class="muted">香港機場官網。</span></figcaption></figure>
+  </div>
+
+  <h3>資料來源（2026-11-09 查詢）</h3>
+  <div class="sources"><ol>
     <li><a href="https://www.hongkongairport.com/tc/transport/mainland-connection/ferry-transfer.page" target="_blank" rel="noopener">香港國際機場｜海天中轉大樓快船（轉乘規定、行李直掛、離境稅退稅）</a></li>
     <li><a href="https://www.hongkongairport.com/tc/transport/mainland-connection/airline-check-in-at-prd-and-macao.page" target="_blank" rel="noopener">香港國際機場｜中國內地及澳門預辦登機服務</a></li>
     <li><a href="https://www.seasyoung.com/aboutus.aspx" target="_blank" rel="noopener">獅子洋飛航｜船期價目表</a></li>
@@ -494,8 +492,9 @@ img{max-width:100%}
     <li><a href="https://xbotpark.com/contactus/" target="_blank" rel="noopener">XbotPark｜預約參觀</a></li>
     <li><a href="https://cn.chinadaily.com.cn/a/202610/30/WS6ae40c25e4b09a165c792828.html" target="_blank" rel="noopener">中國日報｜探訪華為松山湖與 XbotPark</a></li>
         <li><a href="http://www.archina.com/index.php?g=works&m=index&a=show&id=16888" target="_blank" rel="noopener">建築案例｜OPPO 長安研發中心</a></li>
-          </ol>
-</footer>
+          </ol></div>
+</section>
+
 </div>
 </body>
 </html>
